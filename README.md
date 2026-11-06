@@ -33,6 +33,9 @@ In the past, I recorded everything manually in one table. After studying some da
 
 Keeping rates in their own table means a rate change never rewrites history.
 
+![Sessions table with calculated columns](images/sessions-sheet.png)
+*The `sessions` table: the data I enter (date, times, paid status) plus calculated columns for hours, rate, fee and days to pay.*
+
 ### 2. Calculations (Google Sheets)
 
 In the past, I had to type each tutee’s rate by hand, either from memory or by searching through our old conversations. Other than that, I also calculated the hours, the fee for each session, and how long each tutee took to pay, all by hand. So I applied what I learned in my data analysis journey and wrote these calculations: 
@@ -54,8 +57,15 @@ Before this, I had to type out every balance reminder to parents and guardians b
   - Each tutee's unpaid balance (`SUMIFS`)
   - The earliest and latest unpaid session dates (`MINIFS`, `MAXIFS`)
   - A ready-to-send **payment reminder message** built with `TEXT` and `&`, for example: *"Good day! The current balance for Miguel Santos's sessions from … to … is PHP 3,575.00…"*
+
+![Balances sheet with reminder messages](images/balances-sheet.png)
+*Each tutee's unpaid balance, the dates of their unpaid sessions, and a ready-to-send reminder message.*
+
 - **`statement`:** pick a Tutee ID and `FILTER` lists only that family's unpaid sessions, with a total. Useful as a breakdown to send to parents.
 - **Pivot tables:** fees by tutee and month, and average days to pay by tutee.
+
+![Statement of unpaid sessions for one tutee](images/statement-sheet.png)
+*Select a Tutee ID in the top cell and the statement lists only that family's unpaid sessions, with a total.*
 
 ### 4. Dashboard (Tableau Public)
 
